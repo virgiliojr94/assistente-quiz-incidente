@@ -108,23 +108,14 @@ export default function AssistentePrioridade() {
   };
 
   const gerarMensagem = () => {
-    const texto = `*Classificação de Incidente - ${dados.app}*
-` +
-      `👤 *${dados.nome}* (${dados.cargo})
-📧 ${dados.email}
-🖥️ ${dados.infra}
-
-` +
-      `📊 *Prioridade:* ${resultado.prioridade} (Pontuação: ${resultado.total})
-
-` +
-      resultado.respostas.map(r => `*${r.titulo}*
-${r.pergunta}
-➡️ ${r.resposta} (+${r.pontos})
-`).join('
-') +
-      `
-📎 Enviado via Assistente de Priorização.`;
+    const texto = `*Classificação de Incidente - ${dados.app}*\n` +
+      `👤 *${dados.nome}* (${dados.cargo})\n📧 ${dados.email}\n🖥️ ${dados.infra}\n\n` +
+      `📊 *Prioridade:* ${resultado.prioridade} (Pontuação: ${resultado.total})\n\n` +
+      resultado.respostas.map(r =>
+        `*${r.titulo}*\n${r.pergunta}\n➡️ ${r.resposta} (+${r.pontos})\n`
+      ).join('\n') +
+      `\n📎 Enviado via Assistente de Priorização.`;
+  
     return `https://api.whatsapp.com/send?phone=5595981121572&text=${encodeURIComponent(texto)}`;
   };
 
