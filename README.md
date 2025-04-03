@@ -1,63 +1,36 @@
-# 🔥 Assistente de Priorização de Incidentes
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Este é um aplicativo interativo e responsivo para **classificação de incidentes técnicos** com base na **Matriz de Incidentes**, inspirado nos princípios do livro *Site Reliability Engineering* da Google.
+## Getting Started
 
-Desenvolvido com **Next.js, TailwindCSS, Framer Motion e shadcn/ui**, o app ajuda equipes de infraestrutura, desenvolvimento e operações a definirem a **prioridade objetiva de incidentes (P0 a P4)** com base em critérios técnicos e institucionais.
+First, run the development server:
 
----
-
-## 🧭 Funcionalidades
-
-- ✅ Onboarding inicial com explicação do objetivo
-- ✅ Coleta de dados do responsável (nome, cargo, email, app e infraestrutura)
-- ✅ 6 perguntas baseadas nas dimensões da matriz:
-  - Impacto Institucional
-  - Impacto no Usuário Final
-  - Impacto Regulatório
-  - Escalabilidade da Falha
-  - Recorrência
-  - Facilidade de Correção
-- ✅ Cálculo da prioridade com base em pontuação
-- ✅ Resultado final com ícone e explicação
-- ✅ Botão de envio direto via WhatsApp
-- ✅ Design limpo, responsivo e elegante
-
----
-
-## 📦 Tecnologias utilizadas
-
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [shadcn/ui](https://ui.shadcn.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Lucide Icons](https://lucide.dev/)
-
----
-
-## 🚀 Como rodar localmente
-
-
-# Clone o repositório
-git clone https://github.com/seu-usuario/assistente-incidentes.git
-cd assistente-incidentes
-
-# Instale as dependências
-npm install
-
-# Rode o servidor local
+```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-Abra [http://localhost:3000](http://localhost:3000) no navegador para visualizar a aplicação.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🌐 Deploy no Vercel
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Este projeto está pronto para deploy com um clique via [Vercel](https://vercel.com/):
+## Learn More
 
-1. Faça login na [Vercel](https://vercel.com)
-2. Clique em **New Project**
-3. Selecione este repositório (conecte ao GitHub, se necessário)
-4. Clique em **Deploy** e aguarde o build automático
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
