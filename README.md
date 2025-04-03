@@ -33,7 +33,7 @@ Antes de começar, verifique se você tem:
 - Node.js `>=18`
 - npm `>=9`
 - Sistema operacional: Windows, macOS ou Linux
-- Leitura recomendada: [Matriz de Incidentes e Criticidade](https://docs.google.com/document/d/1VGsVyPhKCJdppXdnlSd6tv3OiFSZAvemfgsogdIH8lY)
+- Leitura recomendada: [Incident Metics In Sre](https://static.googleusercontent.com/media/sre.google/pt-BR//static/pdf/IncidentMeticsInSre.pdf)
 
 ---
 
