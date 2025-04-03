@@ -111,28 +111,38 @@ export default function AssistentePrioridade() {
     const texto = `*Classificação de Incidente - ${dados.app}*\n` +
       `👤 *${dados.nome}* (${dados.cargo})\n📧 ${dados.email}\n🖥️ ${dados.infra}\n\n` +
       `📊 *Prioridade:* ${resultado.prioridade} (Pontuação: ${resultado.total})\n\n` +
-      resultado.respostas.map(r =>
-        `*${r.titulo}*\n${r.pergunta}\n➡️ ${r.resposta} (+${r.pontos})\n`
-      ).join('\n') +
+      resultado.respostas.map(r => `*${r.titulo}*\n${r.pergunta}\n➡️ ${r.resposta} (+${r.pontos})\n`).join('\n') +
       `\n📎 Enviado via Assistente de Priorização.`;
-  
     return `https://api.whatsapp.com/send?phone=5595981121572&text=${encodeURIComponent(texto)}`;
   };
 
   if (etapa === 'onboarding') return (
-    <div className="min-h-screen flex items-center justify-center bg-muted">
-      <div className="max-w-xl w-full p-6">
+    <div className="min-h-screen flex items-center justify-center bg-muted px-4">
+      <div className="max-w-screen-sm w-full">
         <Card>
-          <CardContent className="space-y-4 p-6 text-center">
+          <CardContent className="space-y-6 p-6 text-center">
             <h1 className="text-2xl font-bold">🔍 Assistente de Priorização de Incidentes</h1>
-            <p>Classifique incidentes com base em critérios objetivos da SEFAZ RR.</p>
-            <ul className="text-left list-disc px-6 text-sm">
+            <p className="text-sm text-muted-foreground">
+              Classifique incidentes com base em critérios objetivos da SEFAZ RR.
+            </p>
+            <ul className="text-left list-disc px-6 text-sm space-y-2">
               <li>✅ Responda 6 perguntas técnicas e institucionais</li>
               <li>✅ Obtenha a prioridade P0 a P4</li>
               <li>✅ Compartilhe com a equipe via WhatsApp</li>
             </ul>
-            <a href="https://docs.google.com/document/d/1VGsVyPhKCJdppXdnlSd6tv3OiFSZAvemfgsogdIH8lY" className="text-blue-500 underline" target="_blank" rel="noreferrer">📄 Ver documentação oficial</a>
-            <Button className="mt-4 w-full" onClick={handleNext}>Continuar</Button>
+            <div className="pt-2">
+              <a
+                href="https://docs.google.com/document/d/1VGsVyPhKCJdppXdnlSd6tv3OiFSZAvemfgsogdIH8lY"
+                className="text-blue-500 underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Dúvidas?📄 Veja documentação oficial
+              </a>
+            </div>
+            <Button className="mt-4 w-full" onClick={handleNext}>
+              Continuar
+            </Button>
           </CardContent>
         </Card>
       </div>
