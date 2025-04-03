@@ -107,6 +107,13 @@ export default function AssistentePrioridade() {
     }
   };
 
+  const handleVoltar = () => {
+    if (index > 0) {
+      setIndex(index - 1);
+      setRespostas(respostas.slice(0, -1)); // remove última resposta
+    }
+  };
+
   const gerarMensagem = () => {
     const texto = `*Classificação de Incidente - ${dados.app}*\n` +
       `👤 *${dados.nome}* (${dados.cargo})\n📧 ${dados.email}\n🖥️ ${dados.infra}\n\n` +
@@ -167,16 +174,30 @@ export default function AssistentePrioridade() {
     const atual = perguntas[index];
     return (
       <div className="max-w-xl mx-auto p-6 text-center">
-        <motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-          <Card><CardContent className="space-y-4 p-6">
-            <h2 className="text-lg font-bold">{atual.titulo}</h2>
-            <p>{atual.pergunta}</p>
-            <div className="flex flex-col gap-4 pt-4">
-              {atual.opcoes.map((op, i) => (
-                <Button key={i} variant="outline" onClick={() => handleResposta(op)}>{op.texto}</Button>
-              ))}
-            </div>
-          </CardContent></Card>
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Card>
+            <CardContent className="space-y-4 p-6">
+              <h2 className="text-lg font-bold">{atual.titulo}</h2>
+              <p>{atual.pergunta}</p>
+              <div className="flex flex-col gap-4 pt-4">
+                {atual.opcoes.map((op, i) => (
+                  <Button key={i} variant="outline" onClick={() => handleResposta(op)}>
+                    {op.texto}
+                  </Button>
+                ))}
+                {index > 0 && (
+                  <Button variant="ghost" onClick={handleVoltar}>
+                    ⬅️ Voltar
+                  </Button>
+                )}
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
       </div>
     );
