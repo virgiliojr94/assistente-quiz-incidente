@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
+import { Input } from '../components/ui/input';
 import { Flame, AlertTriangle, CircleDashed, CheckCircle, Circle } from 'lucide-react';
 
 const perguntas = [
@@ -117,12 +117,12 @@ export default function AssistentePrioridade() {
   };
 
   if (etapa === 'onboarding') return (
-    <div className="min-h-screen flex items-center justify-center bg-muted px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="max-w-screen-sm w-full">
         <Card>
           <CardContent className="space-y-6 p-6 text-center">
             <h1 className="text-2xl font-bold">🔍 Assistente de Priorização de Incidentes</h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-gray-500">
               Classifique incidentes com base em critérios objetivos da SEFAZ RR.
             </p>
             <ul className="text-left list-disc px-6 text-sm space-y-2">
@@ -187,7 +187,7 @@ export default function AssistentePrioridade() {
       <Card><CardContent className="space-y-4 p-6 text-center">
         <div className="text-4xl">{icones[resultado.prioridade]}</div>
         <h2 className="text-2xl font-bold">Prioridade: {resultado.prioridade}</h2>
-        <p className="text-muted-foreground">Pontuação total: {resultado.total}</p>
+        <p className="text-gray-500">Pontuação total: {resultado.total}</p>
         <div className="text-left text-sm space-y-2 pt-4">
           {resultado.respostas.map((r, i) => (
             <div key={i}><strong>{r.titulo}</strong><br />{r.pergunta}<br /><em>{r.resposta}</em> (+{r.pontos})</div>
